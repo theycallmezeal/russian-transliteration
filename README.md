@@ -1,11 +1,5 @@
 # The Transliterator
 
-**Our Goal:**
-To aid user in linking the *sound* of Russian to the *look* of Russian, by providing the romanisation of user-selected Cyrillic Russian text.
+Allows for the transliteration of foreign strings based on custom-defined transliteration schemes. Russian is provided as a default.
 
-**To-Do:**
-- [x] transliteration feature
-- [x] display popup above selected text, with transliterated text inside
-- [ ] add to local storage, so user can review previously transliterated words
-- [ ] allow user to predefine conversion for transliterating text
-- [ ] add support for more scripts/languages
+Simply highlight Cyrillic text on any page and a popup will appear with Romanized text.
