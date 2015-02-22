@@ -2,20 +2,33 @@
 // gets selected text
 document.onmouseup = function (e) {
 	var t = '';
-	selection = (document.all) ? document.selection.createRange().text : document.getSelection();
-    t = selection.toString();
-
-    var range = selection.getRangeAt(0);
-    var cssclass = $(selection.anchorNode.parentNode).attr("class");
-    $this.startPoint = selection.anchorOffset;
-    $this.endPoint = selection.extentOffset;
-    var newNode = document.createElement("mark");
-    range.surroundContents(newNode);
-
-    finalString = transliterate(t); // transliterates
+	t = (document.all) ? document.selection.createRange().text : document.getSelection();
+	finalString = transliterate(t); // transliterates
     document.getElementById('romanised').innerHTML = finalString;
+    /*transliterate(t.toString());
+    spanSelection();
+    $('#selected').balloon();*/
 }
 if (!document.all) document.captureEvents(Event.MOUSEUP);
+
+/*function spanSelection()  {
+	var selection;
+	//Get the selected stuff
+	if(window.getSelection)
+		selection = window.getSelection();
+	else if(typeof document.selection!="undefined")
+		selection = document.selection;
+	//Get a the selected content, in a range object
+	var range = selection.getRangeAt(0);
+	//If the range spans some text, and inside a tag, set its css class.
+	if(range && !selection.isCollapsed) {
+	    if(selection.anchorNode.parentNode == selection.focusNode.parentNode) {
+	    	var span = document.createElement('span');
+	    	span.id = 'selected';
+	    	range.surroundContents(span);
+	    }
+  }
+}*/
 
 var key = [];
 key["Ё"]="YO";key["Й"]="I";key["Ц"]="TS";key["У"]="U";key["К"]="K";key["Е"]="E";key["Н"]="N";key["Г"]="G";key["Ш"]="SH";key["Щ"]="SCH";key["З"]="Z";
@@ -26,6 +39,7 @@ key["л"]="l";key["д"]="d";key["ж"]="zh";key["э"]="e";key["Я"]="YA";key["Ч"
 key["Б"]="B";key["Ю"]="YU";key["я"]="ya";key["ч"]="ch";key["с"]="s";key["м"]="m";key["и"]="i";key["т"]="t";key["ь"]="'";key["б"]="b";key["ю"]="yu";
 
 function transliterate(word) {
+	word = word.toString();
 	var result = "";
 	for (var i = 0; i < word.length; i++) {
 		var cyrillic = key[word.charAt(i) + ""];
