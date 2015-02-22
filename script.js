@@ -1,9 +1,10 @@
 ﻿document.onmouseup = function() {
 	var t = (document.all) ? document.selection.createRange().text : document.getSelection();
-	if (t == null || t == "" || t == undefined || t.equals(""))
+	if (t == undefined)
 		return;
 	var finalString = transliterate(t);
-	alert(finalString);
+	if (finalString != null)
+		alert(finalString);
 };
 
 var key = [];
@@ -17,13 +18,17 @@ key["я"]="ya";key["ч"]="ch";key["с"]="s";key["м"]="m";key["и"]="i";key["т"
 function transliterate(word) {
 	word = word.toString();
 	var result = "";
+	var changed = false;
 	for (var i = 0; i < word.length; i++) {
 		var cyrillic = key[word.charAt(i) + ""];
 		if (cyrillic != undefined) {
 			result += cyrillic;
+			changed = true;
 		} else {
 			result += word.charAt(i) + "";
 		}
 	}
-    return result;
+	if (changed)
+		return result;
+	return null;
 }
