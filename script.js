@@ -1,4 +1,8 @@
-﻿document.onmouseup = function() {
+﻿$(function() {
+  $('selectors').balloon(options);
+});
+
+document.onmouseup = function() {
 	var t = (document.all) ? document.selection.createRange().text : document.getSelection();
 	if (t == undefined)
 		return;
