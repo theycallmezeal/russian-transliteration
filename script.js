@@ -24,10 +24,6 @@ if (document.readyState) {
 		} else {
 			key = backup;
 		}
-
-		/*if (key == []) {
-			key = backup;
-		}*/
 	});
 }
 
