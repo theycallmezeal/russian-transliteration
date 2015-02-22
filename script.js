@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿var finalString;
 // gets selected text
 document.onmouseup = function (e) {
@@ -10,6 +11,20 @@ document.onmouseup = function (e) {
     $('#selected').balloon();*/
 }
 if (!document.all) document.captureEvents(Event.MOUSEUP);
+=======
+﻿$(function() {
+  $('selectors').balloon(options);
+});
+
+document.onmouseup = function() {
+	var t = (document.all) ? document.selection.createRange().text : document.getSelection();
+	if (t == undefined)
+		return;
+	var finalString = transliterate(t);
+	if (finalString != null)
+		alert(finalString);
+};
+>>>>>>> upstream/master
 
 /*function spanSelection()  {
 	var selection;
@@ -41,13 +56,17 @@ key["Б"]="B";key["Ю"]="YU";key["я"]="ya";key["ч"]="ch";key["с"]="s";key["м
 function transliterate(word) {
 	word = word.toString();
 	var result = "";
+	var changed = false;
 	for (var i = 0; i < word.length; i++) {
 		var cyrillic = key[word.charAt(i) + ""];
 		if (cyrillic != undefined) {
 			result += cyrillic;
+			changed = true;
 		} else {
 			result += word.charAt(i) + "";
 		}
 	}
-    return result;
+	if (changed)
+		return result;
+	return null;
 }
