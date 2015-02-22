@@ -41,7 +41,7 @@ document.onmouseup = function(event) {
 		clearPopups();
 	}
 	if (finalString != null && finalString != lastString) {
-		popup(finalString, event.clientX, event.clientY);
+		popup(finalString, event.pageX, event.pageY);
 		clearSelection();
 	}
 	
