@@ -1,19 +1,24 @@
 {
-  "name": "Russian transliterator",
-  "version": "1.0",
-  "manifest_version": 2,
-  "description": "Russian transliteration for the common man. By Sorin, Aniqah, and Adam",
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
-  "content_scripts": [
-    {
-      "matches": ["file://*", "http://*/*", "https://*/*"],
-	  "css": ["popup.css"],
-      "js": ["script.js"],
-	  "run_at": "document_idle"
-    }
-  ]
+	"name": "Transliterator",
+	"version": "1.0",
+	"manifest_version": 2,
+	"description": "Transliteration for the common man. By Sorin, Aniqah, and Adam",
+	"browser_action": {
+		"default_icon": "icons/icon16.png"
+	},
+	"icons": {
+		"16": "icons/icon16.png",
+		"48": "icons/icon48.png",
+		"128": "icons/icon128.png"
+	},
+	"content_scripts": [{
+		"matches": ["file://*", "http://*/*", "https://*/*"],
+		"css": ["popup.css"],
+		"js": ["script.js"],
+		"run_at": "document_idle"
+	}],
+	"permissions": [
+		"storage"
+	],
+	"options_page": "options.html"
 }

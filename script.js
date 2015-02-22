@@ -18,10 +18,22 @@ if (!document.all) document.captureEvents(Event.MOUSEUP);
 });
 =======
 ﻿var box;
-var lastString = "x";
-window.onload = function () {
+var lastString = "";
+var key = {};
+
+if (document.readyState) {
 	box = document.createElement("div");
 	document.body.appendChild(box);
+	
+	chrome.storage.sync.get("translit_key", function(obj){
+		if (chrome.runtime.lastError) {
+			return;
+		}
+		
+		if (obj) {
+			key = JSON.parse(obj["translit_key"]);
+		}
+	});
 }
 >>>>>>> upstream/master
 
@@ -61,6 +73,7 @@ document.onmouseup = function(event) {
   }
 }*/
 
+<<<<<<< HEAD
 var key = [];
 key["Ё"]="YO";key["Й"]="I";key["Ц"]="TS";key["У"]="U";key["К"]="K";key["Е"]="E";key["Н"]="N";key["Г"]="G";key["Ш"]="SH";key["Щ"]="SCH";key["З"]="Z";
 key["Х"]="H";key["Ъ"]="'";key["ё"]="yo";key["й"]="i";key["ц"]="ts";key["у"]="u";key["к"]="k";key["е"]="e";key["н"]="n";key["г"]="g";key["ш"]="sh";
@@ -69,6 +82,8 @@ key["Л"]="L";key["Д"]="D";key["Ж"]="ZH";key["Э"]="E";key["ф"]="f";key["ы"]
 key["л"]="l";key["д"]="d";key["ж"]="zh";key["э"]="e";key["Я"]="YA";key["Ч"]="CH";key["С"]="S";key["М"]="M";key["И"]="I";key["Т"]="T";key["Ь"]="'";
 key["Б"]="B";key["Ю"]="YU";key["я"]="ya";key["ч"]="ch";key["с"]="s";key["м"]="m";key["и"]="i";key["т"]="t";key["ь"]="'";key["б"]="b";key["ю"]="yu";
 
+=======
+>>>>>>> upstream/master
 function transliterate(word) {
 	word = word.toString();
 	var result = "";
@@ -101,7 +116,7 @@ function popup(word, x, y) {
 
 function clearPopups() {
 	box.innerHTML = "";
-	lastString = "x";
+	lastString = "";
 }
 
 function clearSelection () {
