@@ -1,0 +1,8 @@
+.popup {
+	position: absolute;
+	background-color: #dedede;
+	color: #333333;
+	padding: 5px;
+	border: 2px solid #cdcdcd;
+	border-radius: 3px;
+}
