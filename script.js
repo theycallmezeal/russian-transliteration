@@ -3,12 +3,12 @@ var lastString = "";
 var key = {};
 
 var backup = {};
-backup["Ё"]="YO";backup["Й"]="I";backup["Ц"]="TS";backup["У"]="U";backup["К"]="K";backup["Е"]="E";backup["Н"]="N";backup["Г"]="G";backup["Ш"]="SH";backup["Щ"]="SCH";backup["З"]="Z";backup["Х"]="H";backup["Ъ"]="'";
-backup["ё"]="yo";backup["й"]="i";backup["ц"]="ts";backup["у"]="u";backup["к"]="k";backup["е"]="e";backup["н"]="n";backup["г"]="g";backup["ш"]="sh";backup["щ"]="sch";backup["з"]="z";backup["х"]="h";backup["ъ"]="'";
-backup["Ф"]="F";backup["Ы"]="I";backup["В"]="V";backup["А"]="A";backup["П"]="P";backup["Р"]="R";backup["О"]="O";backup["Л"]="L";backup["Д"]="D";backup["Ж"]="ZH";backup["Э"]="E";
-backup["ф"]="f";backup["ы"]="i";backup["в"]="v";backup["а"]="a";backup["п"]="p";backup["р"]="r";backup["о"]="o";backup["л"]="l";backup["д"]="d";backup["ж"]="zh";backup["э"]="e";
-backup["Я"]="YA";backup["Ч"]="CH";backup["С"]="S";backup["М"]="M";backup["И"]="I";backup["Т"]="T";backup["Ь"]="'";backup["Б"]="B";backup["Ю"]="YU";
-backup["я"]="ya";backup["ч"]="ch";backup["с"]="s";backup["м"]="m";backup["и"]="i";backup["т"]="t";backup["ь"]="'";backup["б"]="b";backup["ю"]="yu";
+backup["Ё"]="Yo";backup["Й"]="I";backup["Ц"]="Ts";backup["У"]="U";backup["К"]="K";backup["Е"]="E";backup["Н"]="N";backup["Г"]="G";backup["Ш"]="Sh";backup["Щ"]="Sch";backup["З"]="Z";
+backup["Х"]="H";backup["Ъ"]="'";backup["ё"]="yo";backup["й"]="i";backup["ц"]="ts";backup["у"]="u";backup["к"]="k";backup["е"]="e";backup["н"]="n";backup["г"]="g";backup["ш"]="sh";
+backup["щ"]="sch";backup["з"]="z";backup["х"]="h";backup["ъ"]="'";backup["Ф"]="F";backup["Ы"]="I";backup["В"]="V";backup["А"]="A";backup["П"]="P";backup["Р"]="R";backup["О"]="O";
+backup["Л"]="L";backup["Д"]="D";backup["Ж"]="Zh";backup["Э"]="E";backup["ф"]="f";backup["ы"]="i";backup["в"]="v";backup["а"]="a";backup["п"]="p";backup["р"]="r";backup["о"]="o";
+backup["л"]="l";backup["д"]="d";backup["ж"]="zh";backup["э"]="e";backup["Я"]="Ya";backup["Ч"]="Ch";backup["С"]="S";backup["М"]="M";backup["И"]="I";backup["Т"]="T";backup["Ь"]="'";
+backup["Б"]="B";backup["Ю"]="Yu";backup["я"]="ya";backup["ч"]="ch";backup["с"]="s";backup["м"]="m";backup["и"]="i";backup["т"]="t";backup["ь"]="'";backup["б"]="b";backup["ю"]="yu";
 
 if (document.readyState) {
 	box = document.createElement("div");
