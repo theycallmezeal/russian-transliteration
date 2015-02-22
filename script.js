@@ -4,29 +4,28 @@ document.onmouseup = function (e) {
 	var t = '';
     t = (document.all) ? document.selection.createRange().text : document.getSelection();
     finalString = transliterate(t); // transliterates
-    document.getElementById('romanised').value = finalString;
+    document.getElementById('romanised').innerHTML = finalString;
 }
 if (!document.all) document.captureEvents(Event.MOUSEUP);
 
-var A = [];
-A["Ё"]="YO";A["Й"]="I";A["Ц"]="TS";A["У"]="U";A["К"]="K";A["Е"]="E";A["Н"]="N";A["Г"]="G";A["Ш"]="SH";A["Щ"]="SCH";A["З"]="Z";A["Х"]="H";A["Ъ"]="'";
-A["ё"]="yo";A["й"]="i";A["ц"]="ts";A["у"]="u";A["к"]="k";A["е"]="e";A["н"]="n";A["г"]="g";A["ш"]="sh";A["щ"]="sch";A["з"]="z";A["х"]="h";A["ъ"]="'";
-A["Ф"]="F";A["Ы"]="I";A["В"]="V";A["А"]="A";A["П"]="P";A["Р"]="R";A["О"]="O";A["Л"]="L";A["Д"]="D";A["Ж"]="ZH";A["Э"]="E";
-A["ф"]="f";A["ы"]="i";A["в"]="v";A["а"]="a";A["п"]="p";A["р"]="r";A["о"]="o";A["л"]="l";A["д"]="d";A["ж"]="zh";A["э"]="e";
-A["Я"]="YA";A["Ч"]="CH";A["С"]="S";A["М"]="M";A["И"]="I";A["Т"]="T";A["Ь"]="'";A["Б"]="B";A["Ю"]="YU";
-A["я"]="ya";A["ч"]="ch";A["с"]="s";A["м"]="m";A["и"]="i";A["т"]="t";A["ь"]="'";A["б"]="b";A["ю"]="yu";
+var key = [];
+key["Ё"]="YO";key["Й"]="I";key["Ц"]="TS";key["У"]="U";key["К"]="K";key["Е"]="E";key["Н"]="N";key["Г"]="G";key["Ш"]="SH";key["Щ"]="SCH";key["З"]="Z";key["Х"]="H";key["Ъ"]="'";
+key["ё"]="yo";key["й"]="i";key["ц"]="ts";key["у"]="u";key["к"]="k";key["е"]="e";key["н"]="n";key["г"]="g";key["ш"]="sh";key["щ"]="sch";key["з"]="z";key["х"]="h";key["ъ"]="'";
+key["Ф"]="F";key["Ы"]="I";key["В"]="V";key["А"]="A";key["П"]="P";key["Р"]="R";key["О"]="O";key["Л"]="L";key["Д"]="D";key["Ж"]="ZH";key["Э"]="E";
+key["ф"]="f";key["ы"]="i";key["в"]="v";key["а"]="a";key["п"]="p";key["р"]="r";key["о"]="o";key["л"]="l";key["д"]="d";key["ж"]="zh";key["э"]="e";
+key["Я"]="YA";key["Ч"]="CH";key["С"]="S";key["М"]="M";key["И"]="I";key["Т"]="T";key["Ь"]="'";key["Б"]="B";key["Ю"]="YU";
+key["я"]="ya";key["ч"]="ch";key["с"]="s";key["м"]="m";key["и"]="i";key["т"]="t";key["ь"]="'";key["б"]="b";key["ю"]="yu";
 
 function transliterate(word) {
 	word = word.toString();
 	var result = "";
 	for (var i = 0; i < word.length; i++) {
-		var cyrillic = A[word.charAt(i) + ""];
+		var cyrillic = key[word.charAt(i) + ""];
 		if (cyrillic != undefined) {
 			result += cyrillic;
 		} else {
 			result += word.charAt(i) + "";
 		}
 	}
-	console.log(result);
     return result;
 }
