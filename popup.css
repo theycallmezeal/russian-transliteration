@@ -1,5 +1,5 @@
 .popup {
-	position: absolute;
+               position: absolute;
 	background-color: #dedede;
 	background: #ffffff; /* Old browsers */
 	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
