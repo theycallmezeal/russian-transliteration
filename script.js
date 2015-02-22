@@ -1,16 +1,7 @@
-function russianToEnglish(russian) {
-	russian = romanization;
-	romanization = romanization.replace("а", "a").replace("б", "b").replace("в", "v").replace("г", "g").replace("д", "d");
-	romanization = romanization.replace("е", "ye").replace("ё", "yo").replace("ж", "zh").replace("з", "z").replace("и", "i");
-	romanization = romanization.replace("й", "y").replace("к", "k").replace("л", "l").replace("м", "m").replace("н", "n");
-	romanization = romanization.replace("о", "o").replace("п", "p").replace("р", "r").replace("с", "s").replace("т", "t");
-	romanization = romanization.replace("у", "u").replace("ф", "f").replace("х", "kh").replace("ц", "ts").replace("ч", "ch");
-	romanization = romanization.replace("ш", "sh").replace("щ", "shch").replace("ъ", "").replace("ы", "y").replace("ь", "'");
-	romanization = romanization.replace("э", "e").replace("ю", "yu").replace("я", "ya").replace("A", "A").replace("Б", "B");
-	romanization = romanization.replace("B", "V").replace("Г", "G").replace("Д", "D").replace("E", "Ye").replace("Ё", "Yo");
-	romanization = romanization.replace("Ж", "Zh").replace("З", "Z").replace("И", "I").replace("Й", "Y").replace("К", "K");
-	romanization = romanization.replace("Л", "L").replace("M", "M").replace("H", "N").replace("О", "O").replace("П", "P");
-	romanization = romanization.replace("P", "R").replace("C", "S").replace("T", "T").replace("Ф", "F").replace("X", "Kh");
-	romanization = romanization.replace("Ц", "Ts").replace("Ч", "Ch").replace("Ш", "Sh").replace("Щ", "Shch").replace("Ъ", "");
-	romanization = romanization.replace("Ы", "Y").replace("Ь", "'").replace("Э", "E").replace("Ю", "Yu").replace("Я", "Ya");
+var a = {"Ё":"YO","Й":"I","Ц":"TS","У":"U","К":"K","Е":"E","Н":"N","Г":"G","Ш":"SH","Щ":"SCH","З":"Z","Х":"H","Ъ":"'","ё":"yo","й":"i","ц":"ts","у":"u","к":"k","е":"e","н":"n","г":"g","ш":"sh","щ":"sch","з":"z","х":"h","ъ":"'","Ф":"F","Ы":"I","В":"V","А":"A","П":"P","Р":"R","О":"O","Л":"L","Д":"D","Ж":"ZH","Э":"E","ф":"f","ы":"i","в":"v","а":"a","п":"p","р":"r","о":"o","л":"l","д":"d","ж":"zh","э":"e","Я":"Ya","Ч":"CH","С":"S","М":"M","И":"I","Т":"T","Ь":"'","Б":"B","Ю":"YU","я":"ya","ч":"ch","с":"s","м":"m","и":"i","т":"t","ь":"'","б":"b","ю":"yu"};
+
+function transliterate(word){
+  return word.split('').map(function (char) { 
+    return a[char] || char; 
+  }).join("");
 }
