@@ -8,12 +8,11 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "default_locale": "en",
   "content_scripts": [
     {
-      "matches": ["http://www.google.com/*"],
-      "css": ["bootstrap.min.css"],
-      "js": ["jquery.js", "myscript.js"]
+      "matches": ["file://*", "http://*/*", "https://*/*"],
+      "js": ["script.js"],
+	  "run_at": "document_idle"
     }
   ]
 }

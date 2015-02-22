@@ -1,12 +1,10 @@
-﻿var finalString;
-// gets selected text
-document.onmouseup = function (e) {
-	var t = '';
-    t = (document.all) ? document.selection.createRange().text : document.getSelection();
-    finalString = transliterate(t); // transliterates
-    document.getElementById('romanised').innerHTML = finalString;
-}
-if (!document.all) document.captureEvents(Event.MOUSEUP);
+﻿document.onmouseup = function() {
+	var t = (document.all) ? document.selection.createRange().text : document.getSelection();
+	if (t == null || t == "" || t == undefined || t.equals(""))
+		return;
+	var finalString = transliterate(t);
+	alert(finalString);
+};
 
 var key = [];
 key["Ё"]="YO";key["Й"]="I";key["Ц"]="TS";key["У"]="U";key["К"]="K";key["Е"]="E";key["Н"]="N";key["Г"]="G";key["Ш"]="SH";key["Щ"]="SCH";key["З"]="Z";key["Х"]="H";key["Ъ"]="'";
