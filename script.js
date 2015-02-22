@@ -19,10 +19,15 @@ if (document.readyState) {
 			return;
 		}
 		
-		if (obj) {
+		if (obj && obj["translit_key"]) {
 			key = JSON.parse(obj["translit_key"]);
 		} else {
 			key = backup;
+			var obj = {};
+			obj["translit_key"] = JSON.stringify(backup);
+			chrome.storage.sync.set(obj, function() {
+				console.log('Data saved');
+			});
 		}
 	});
 }

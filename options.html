@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>theycallmezeal - Home</title>
+		<title>Transliterator options</title>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="options.css">
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="options.js"></script>
 	</head>
 	<body>
-		<h1>Transliterator options</h1>
-		<p><input type="button" id="save" value="Save"></p>
-		<table id="myTable" class="order-list">
-			<thead><tr>
-				<td>Letter</td>
-				<td>Transliteration</td>
-			</tr></thead>
-			<tbody>
-				<tr>
-					<td><a class="deleteRow"></a>
-					</td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="5" style="text-align: left;">
-					<input type="button" id="addrow" value="Add Row" />
-					</td>
-				</tr>
-			</tfoot>
-		</table>
+		<div id="container">
+			<h1>Transliterator options</h1>
+			<p><input type="button" id="save" value="Save"></p>
+			<table id="myTable" class="order-list">
+				<thead><tr>
+					<td>Letter</td>
+					<td>Transliteration</td>
+				</tr></thead>
+				<tbody>
+					<tr>
+						<td><a class="deleteRow"></a>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="5" style="text-align: left;">
+						<input type="button" id="addrow" value="Add Row" />
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
 	</body>
 </html>
